@@ -1,24 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Comp1 from './extras/Comp1'
+import { createContext } from 'react';
+
+const user = "Ram"
+export const UserContext = createContext();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={user}>
+      <Comp1 />
+    </UserContext.Provider>
   );
 }
 
